@@ -18,6 +18,17 @@
         }
         .btn-ajudar:hover { background-color: #1eb05a; color: #fff; transform: scale(1.02); }
         .progress { height: 12px; border-radius: 10px; }
+        
+        /* Estilo das Abas (Tabs) */
+        .nav-tabs { border-bottom: 2px solid #eee; }
+        .nav-link { color: #666; font-weight: 700; border: none !important; padding: 15px 25px; }
+        .nav-link.active { color: var(--primary-color) !important; border-bottom: 3px solid var(--primary-color) !important; background: none !important; }
+        
+        .donation-item { border-bottom: 1px solid #eee; padding: 15px 0; display: flex; align-items: center; }
+        .donation-item:last-child { border-bottom: none; }
+        .user-icon { width: 40px; height: 40px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; color: #999; }
+
+        /* Notificação */
         .notificacao {
             position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 10px 15px;
             border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex;
@@ -25,6 +36,9 @@
         }
         .notificacao.show { transform: translateY(0); }
         .avatar img { width: 35px; height: 35px; border-radius: 50%; margin-right: 10px; }
+
+        footer a { text-decoration: none; color: #6c757d; font-size: 14px; }
+        footer h6 { font-weight: 700; margin-bottom: 20px; }
     </style>
 </head>
 <body>
@@ -45,32 +59,42 @@
         <div class="col-lg-8">
             <div class="main-card">
                 <img src="images/wYgCCD9302404.png" alt="Theo" class="img-principal">
-                <div class="p-4">
-                    <h4 class="fw-bold border-bottom pb-2">Sobre a vaquinha</h4>
-                    
-                    <div class="mt-3" style="line-height: 1.6; color: #444;">
-                        <p>
-                            💙🙏 <strong>"Theo tem apenas 8 anos e precisa de uma nova prótese para continuar caminhando"</strong>
-                        </p>
-                        
-                        <p>
-                            Theo tem apenas 8 anos, mas já enfrentou batalhas que muitos adultos jamais imaginariam. Ele nasceu com uma má formação congênita e, aos 6 anos, precisou amputar as duas perninhas para continuar vivendo. Mesmo tão pequeno, Theo nunca perdeu o sorriso nem a vontade de seguir em frente.
-                        </p>
+                
+                <ul class="nav nav-tabs px-4 pt-3" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="sobre-tab" data-bs-toggle="tab" data-bs-target="#sobre" type="button">Sobre</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="ajudou-tab" data-bs-toggle="tab" data-bs-target="#ajudou" type="button">Quem ajudou</button>
+                    </li>
+                </ul>
 
-                        <p>
-                            💪 <strong>Um menino que inspira</strong><br>
-                            Mesmo com todas as dificuldades, Theo ama praticar esporte e se tornou uma referência para outras crianças PCD. Quando Theo ganhou sua primeira prótese, foi um momento de felicidade imensa e um incentivo para se tornar quem ele é hoje.
-                        </p>
+                <div class="tab-content p-4" id="myTabContent">
+                    <div class="tab-pane fade show active" id="sobre">
+                        <div style="line-height: 1.6; color: #444;">
+                            <p>💙🙏 <strong>"Theo tem apenas 8 anos e precisa de uma nova prótese para continuar caminhando"</strong></p>
+                            <p>Theo tem apenas 8 anos, mas já enfrentou batalhas que muitos adultos jamais imaginariam. Ele nasceu com uma má formação congênita e, aos 6 anos, precisou amputar as duas perninhas para continuar vivendo.</p>
+                            <p>💪 <strong>Um menino que inspira</strong><br>Theo ama praticar esporte e se tornou uma referência para outras crianças PCD.</p>
+                            <p>💔 <strong>O desafio agora</strong><br>As próteses do Theo já não encaixam mais. Para uma criança, não poder brincar dói tanto quanto qualquer ferida física.</p>
+                            <p>🎯 <strong>O que precisamos</strong><br>Arrecadar R$ 40.000,00 para uma nova prótese. Para ele, é o mundo inteiro.</p>
+                        </div>
+                    </div>
 
-                        <p>
-                            💔 <strong>O desafio agora</strong><br>
-                            Com o crescimento e a idade, as próteses do Theo já não encaixam mais em suas perninhas. Hoje, ele passa a maior parte do tempo cabisbaixo, por não conseguir mais realizar as atividades que fazia quando usava a prótese. Para uma criança, não poder brincar e se movimentar dói tanto quanto qualquer ferida física.
-                        </p>
-
-                        <p>
-                            🎯 <strong>O que precisamos agora</strong><br>
-                            Precisamos arrecadar R$ 40.000,00 para uma nova prótese para o Theo. Para nós, é apenas uma prótese. Para ele, é o mundo inteiro.
-                        </p>
+                    <div class="tab-pane fade" id="ajudou">
+                        <div id="lista-doadores">
+                            <div class="donation-item">
+                                <div class="user-icon">M</div>
+                                <div><div class="fw-bold">Mariana Santos</div><div class="text-success small">Ajudou com R$ 50,00</div></div>
+                            </div>
+                            <div class="donation-item">
+                                <div class="user-icon">R</div>
+                                <div><div class="fw-bold">Ricardo Lima</div><div class="text-success small">Ajudou com R$ 100,00</div></div>
+                            </div>
+                            <div class="donation-item">
+                                <div class="user-icon">A</div>
+                                <div><div class="fw-bold">Anônimo</div><div class="text-success small">Ajudou com R$ 25,00</div></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,7 +111,6 @@
                     <span>72% da meta</span>
                     <span class="text-muted">Meta R$ 40.000,00</span>
                 </div>
-                
                 <a href="contribuir.html" class="btn-ajudar mb-3">Quero Ajudar</a>
                 <p class="text-center text-muted small">Doe via PIX, Boleto ou Cartão</p>
             </div>
@@ -96,22 +119,50 @@
 </div>
 
 <footer class="bg-white border-top py-5 mt-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 text-center text-md-start">
-                <h5 class="fw-bold mb-3">Baixe o nosso app</h5>
-                <p class="text-muted small">Acompanhe doações e ajude causas de onde estiver.</p>
-                <div class="d-flex justify-content-center justify-content-md-start gap-2">
-                    <a href="#" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 40px;">
-                    </a>
-                    <a href="#" target="_blank">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style="height: 40px;">
-                    </a>
-                </div>
+    <div class="container text-center">
+        <div class="row text-start mb-4">
+            <div class="col-md-3"><h6>Como ajudar</h6><ul class="list-unstyled small"><li>Criar vaquinha</li><li>Como funciona</li></ul></div>
+            <div class="col-md-3"><h6>Descubra</h6><ul class="list-unstyled small"><li>Recentes</li><li>Encerramento</li></ul></div>
+            <div class="col-md-3"><h6>Institucional</h6><ul class="list-unstyled small"><li>Sobre</li><li>Termos</li></ul></div>
+            <div class="col-md-3"><h6>Apps</h6>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" height="30" class="mb-2"><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" height="30">
             </div>
-            <div class="col-md-6 text-center text-md-end mt-4 mt-md-0">
-                <div class="logo-footer mb-2" style="font-weight: 700; font-size: 24px; color: #24CA68;">vakinha</div>
+        </div>
+        <hr>
+        <div class="logo mt-3">vakinha</div>
+        <p class="text-muted small">© 2025 Vakinha Online - Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showToast(msg) {
+        const toast = document.createElement('div');
+        toast.className = 'notificacao';
+        toast.innerHTML = `<div class="avatar"><img src="images/perfil.png" alt="User"></div><div class="content">${msg}</div>`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.classList.add('show'), 100);
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 3500);
+    }
+    
+    // Simula novas doações aparecendo no topo da lista
+    function addDonation(nome, valor) {
+        const lista = document.getElementById('lista-doadores');
+        const item = document.createElement('div');
+        item.className = 'donation-item';
+        item.innerHTML = `<div class="user-icon">${nome[0]}</div><div><div class="fw-bold">${nome}</div><div class="text-success small">Ajudou com R$ ${valor}</div></div>`;
+        lista.prepend(item);
+        showToast(`${nome} doou R$ ${valor}`);
+    }
+
+    setTimeout(() => addDonation("Roberto F.", "50,00"), 5000);
+    setTimeout(() => addDonation("Carla Souza", "30,00"), 15000);
+</script>
+
 </body></html>
 
 

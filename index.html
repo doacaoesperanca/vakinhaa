@@ -34,6 +34,7 @@
         }
         .notificacao.show { transform: translateY(0); }
         .avatar img { width: 35px; height: 35px; border-radius: 50%; margin-right: 10px; }
+        .seguranca-texto { font-size: 13px; color: #555; font-weight: 600; margin-top: 8px; display: block; }
     </style>
 </head>
 <body>
@@ -61,6 +62,7 @@
         
         <div class="mt-3 d-lg-none">
             <button onclick="irParaPagamento(this)" class="btn-ajudar">Quero Ajudar Agora</button>
+            <span class="seguranca-texto"> Doação 100% segura via LivePix</span>
         </div>
     </div>
 
@@ -116,8 +118,11 @@
                     <span class="text-muted">Meta R$ 40.000,00</span>
                 </div>
                 
-                <button onclick="irParaPagamento(this)" class="btn-ajudar mb-3">Quero Ajudar</button>
-                <p class="text-center text-muted small">Doe via PIX, Boleto ou Cartão</p>
+                <button onclick="irParaPagamento(this)" class="btn-ajudar mb-2">Quero Ajudar</button>
+                <div class="text-center">
+                    <span class="seguranca-texto mb-3"> Doação 100% segura via LivePix</span>
+                </div>
+                <p class="text-center text-muted small mt-2">Doe via PIX, Boleto ou Cartão</p>
             </div>
         </div>
     </div>
@@ -127,6 +132,7 @@
     <div class="container text-center">
         <div class="logo">vakinha</div>
         <p class="text-muted small mb-0">© 2026 Vakinha Online - Todos os direitos reservados.</p>
+        <p style="font-size: 10px; color: #ccc;" class="mt-2">Pagamentos processados com segurança por LivePix Tecnologia.</p>
     </div>
 </footer>
 
@@ -134,7 +140,7 @@
 <script>
     function irParaPagamento(elemento) {
         elemento.disabled = true;
-        elemento.innerHTML = "⌛ Redirecionando para confirmação...";
+        elemento.innerHTML = " Redirecionando para confirmação...";
         setTimeout(function() {
             window.location.href = "https://livepix.gg/vaquinha/ajude-o-theo";
         }, 1200);
@@ -154,6 +160,8 @@
     setTimeout(() => showToast("Ricardo M. doou R$ 100,00"), 5000);
 </script>
 </body></html>
+
+
 
 
 
